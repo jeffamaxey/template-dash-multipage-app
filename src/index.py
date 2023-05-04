@@ -44,8 +44,9 @@ def create_navbar_links(list_of_pages):
             # Capitalize the page title and remove underscores
             page_title = page.replace("_", " ").title()
             navbar_links.append(
-                dbc.NavItem(dbc.NavLink(
-                    page_title, href="/" + page, className="ml-2"))
+                dbc.NavItem(
+                    dbc.NavLink(page_title, href=f"/{page}", className="ml-2")
+                )
             )
 
     return navbar_links
@@ -69,9 +70,7 @@ def toggle_navbar_collapse(n, is_open):
     Returns:
         [type]: [description]
     """
-    if n:
-        return not is_open
-    return is_open
+    return not is_open if n else is_open
 
 
 for i in [2]:

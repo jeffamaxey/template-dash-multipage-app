@@ -72,19 +72,17 @@ def predict(n, input_value):
     Returns:
         [type]: [description]
     """
-    # if not clicked yet then n = 0
     if n is None:
         return ""
-    # else n > 0, then it has been clicked
-    else:
         #
-        if input_value == None:
-            return "You typed 0 characters."
-        else:
-            if len(input_value) == 1:
-                return f"You typed {len(input_value)} character."
-            else:
-                return f"You typed {len(input_value)} characters."
+    if input_value is None:
+        return "You typed 0 characters."
+    else:
+        return (
+            f"You typed {len(input_value)} character."
+            if len(input_value) == 1
+            else f"You typed {len(input_value)} characters."
+        )
 
 
 ##############################################################

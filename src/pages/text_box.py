@@ -65,13 +65,12 @@ def update_output_div(input_value):
     Returns:
         [type]: [description]
     """
-    if input_value:
-        if len(input_value) == 1:
-            return f"You typed {len(input_value)} character."
-        else:
-            return f"You typed {len(input_value)} characters."
-    else:
+    if not input_value:
         return "Type Something"
+    if len(input_value) == 1:
+        return f"You typed {len(input_value)} character."
+    else:
+        return f"You typed {len(input_value)} characters."
 
 
 ##############################################################
